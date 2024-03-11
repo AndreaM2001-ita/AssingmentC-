@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\marco\\Desktop\\Marcosano_10541054\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A9E50C89-6162-4308-BAE3-C546687D7B44}|Marcosano_10541054\\Marcosano_10541054.vcxproj|C:\\Users\\marco\\Desktop\\Marcosano_10541054\\Marcosano_10541054\\Assignment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9E50C89-6162-4308-BAE3-C546687D7B44}|Marcosano_10541054\\Marcosano_10541054.vcxproj|solutionrelative:Marcosano_10541054\\Assignment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Assignment.cpp",
+              "DocumentMoniker": "C:\\Users\\marco\\Desktop\\Marcosano_10541054\\Marcosano_10541054\\Assignment.cpp",
+              "RelativeDocumentMoniker": "Marcosano_10541054\\Assignment.cpp",
+              "ToolTip": "C:\\Users\\marco\\Desktop\\Marcosano_10541054\\Marcosano_10541054\\Assignment.cpp",
+              "RelativeToolTip": "Marcosano_10541054\\Assignment.cpp",
+              "ViewState": "AQIAABAAAAAAAAAAAAAIwBYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-11T03:37:38.546Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
