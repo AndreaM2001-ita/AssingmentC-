@@ -1,7 +1,18 @@
+/*
+* Assignment 1 of OOP _ 
+* program takes converts the txt file containing a dictionary into a vecotr dictionary
+* each word is inserted in the dictionary in order for the vector to be searched
+* furthermore, the user is promped to enter a word to search and abianry search is performed on the vector
+* 
+* Author: Andrea Marcosano 
+* Student ID: 10541054
+*/
+
+
 #include<iostream>
 #include<String>//use strings in program, library
-#include<fstream>
-#include<vector>
+#include<fstream>//use txt files in the program 
+#include<vector>//use vectors in this program 
 
 using namespace std;
 
@@ -58,17 +69,20 @@ int main() {
 	//string filename = "dictionary_2024S1.txt"; //file of the assignment with dictionary DEPRECATED
 
 	cout << "Attempting to read text file..."<<endl; //communicating to user that the porgram is attemption to read file 
-	ifstream file(filename);
-	if (!file.is_open())
+	ifstream f(filename);//auxiliary file named f to verify if file exists 
+	if (!f.is_open())
 	{
 		cout << "Unable to open file..."<<endl;
 		cout << "Opening file " << MAINFILE << endl;
-		ifstream file(MAINFILE); //open main file if file not found
+		filename = MAINFILE;
 	}
-	//regardless of what file the user tries to oipen a file will always be opened 
-	//while(true)
+	f.close();
+	ifstream file(filename); //open main file if file not found
+	//regardless of what file the user tries to open a file will always be opened 
+
 	linesRead = 0;
-	while (!file.eof())
+	while(linesRead<8)
+	//while (!file.eof())
 	{
 		word.type = getInfo(file, type);  //read type of current word
 		word.definition = getInfo(file, definition);//read definition of current word
@@ -79,7 +93,7 @@ int main() {
 		linesRead++;
 	}
 	file.close();
-	cout << "-------------------------------------------------" << endl;
+	cout << "-------------------------------------------------" << endl;//separator
 	//algorithm to ask for a word to user
 	string idiom;
 	enterWord(idiom);//passed by reference
@@ -87,33 +101,33 @@ int main() {
 	//algorithm to find word
 	//implmenting binary search as the dictionary is sorted alphabetically
 
-	int left = 0;
-	int right = Dictionary.size() - 1;
-	int middle;
+	int left = 0;//initialise start of vector
+	int right = Dictionary.size();  //initialise right value to the size of the dictionary
+	int middle; //middle avlue to facilitate binary search
 
-	bool found=false;
+	bool found=false; //bool variable to identify if word was found or not
 
 	while (left < right) {
 		middle = (left - right) / 2; //find middle element
 		if (Dictionary[middle].name == idiom)
 		{
 			cout << "The word "<< idiom <<"was found"<< endl;
-			print(Dictionary[middle]);
+			print(Dictionary[middle]); //call function to print values on screen
 			found = true;
 		}
 		else
 		{
 			if (idiom < Dictionary[middle].name)
 			{
-				right = middle - 1;
+				right = middle - 1;  //if word is a bigger word than the middle value
 			}
 			else
 			{
-				left = middle + 1;
+				left = middle + 1; //if word is smaller than the one at middle value
 			}
 		}
 	}
-	if (!found) {
+	if (!found) {//scenario - word not found
 		cout << "Unfortunately the word you entered could not be found in the dictionary " << endl;
 	}
 

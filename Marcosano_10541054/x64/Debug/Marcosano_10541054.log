@@ -1,2 +1,3 @@
 ﻿  Assignment.cpp
+C:\Users\marco\Desktop\Assignment1\Marcosano_10541054\Assignment.cpp(105,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Marcosano_10541054.vcxproj -> C:\Users\marco\Desktop\Assignment1\x64\Debug\Marcosano_10541054.exe

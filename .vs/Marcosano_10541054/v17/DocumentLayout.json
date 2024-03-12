@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\marco\\Desktop\\Assignment1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A9E50C89-6162-4308-BAE3-C546687D7B44}|Marcosano_10541054\\Marcosano_10541054.vcxproj|C:\\Users\\marco\\Desktop\\Assignment1\\Marcosano_10541054\\Assignment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A9E50C89-6162-4308-BAE3-C546687D7B44}|Marcosano_10541054\\Marcosano_10541054.vcxproj|solutionrelative:Marcosano_10541054\\Assignment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A9E50C89-6162-4308-BAE3-C546687D7B44}|Marcosano_10541054\\Marcosano_10541054.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\COMMUNITY\\VC\\TOOLS\\MSVC\\14.39.33519\\INCLUDE\\VECTOR||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\throw_bad_alloc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A9E50C89-6162-4308-BAE3-C546687D7B44}|Marcosano_10541054\\Marcosano_10541054.vcxproj|C:\\Users\\marco\\Desktop\\Assignment1\\Marcosano_10541054\\Assignment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9E50C89-6162-4308-BAE3-C546687D7B44}|Marcosano_10541054\\Marcosano_10541054.vcxproj|solutionrelative:Marcosano_10541054\\Assignment.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,30 +17,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "throw_bad_alloc.cpp",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\throw_bad_alloc.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\throw_bad_alloc.cpp",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\throw_bad_alloc.cpp",
-              "RelativeToolTip": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\crt\\src\\vcruntime\\throw_bad_alloc.cpp",
-              "ViewState": "AQIAABUAAAAAAAAAAAAowCIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-03-11T06:36:44.175Z",
+              "DocumentIndex": 0,
+              "Title": "vector",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "RelativeToolTip": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\include\\vector",
+              "ViewState": "AQIAAFgHAAAAAAAAAAAQwGQHAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-03-12T05:53:45.575Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Assignment.cpp",
               "DocumentMoniker": "C:\\Users\\marco\\Desktop\\Assignment1\\Marcosano_10541054\\Assignment.cpp",
               "RelativeDocumentMoniker": "Marcosano_10541054\\Assignment.cpp",
               "ToolTip": "C:\\Users\\marco\\Desktop\\Assignment1\\Marcosano_10541054\\Assignment.cpp",
               "RelativeToolTip": "Marcosano_10541054\\Assignment.cpp",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAgwGoAAAAEAAAA",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAUwG4AAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-11T03:37:38.546Z",
               "EditorCaption": ""
