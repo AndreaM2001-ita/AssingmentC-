@@ -157,7 +157,7 @@ int main() {
 			}
 		}
 		if (!found) {//scenario - word not found
-			cout << "Unfortunately the word you entered could not be found in the dictionary " << endl;
+			cout << "word not found " << endl;
 		}
 
 		queryUser(response);//reponse passed by reference
