@@ -10,9 +10,10 @@
 
 
 #include<iostream>
-#include<String>//use strings in program, library
+#include<string>//use strings in program, library
 #include<fstream>//use txt files in the program 
 #include<vector>//use vectors in this program 
+#include <cmath> //floor function
 
 using namespace std;
 
@@ -37,21 +38,45 @@ string askFileName()
 {
 	string filename;
 	cout << "insert the name of your file, with its .txt extention " << endl;
+	cin.clear();
 	getline(cin,filename,'\n');
 	return filename;
 }
 //function to make the user enter the word to search
 void enterWord(string& idiom) {
 	cout << "Insert the word to search in dictionary" << endl;
-	getline(cin, idiom, '\n');
+	cin.clear();
+	getline(cin, idiom);
+	
+}
+//function to replace - with ~ as looking up woirds would return erranous results as ASCII of '-' is llower than the other characters
+//therefore is was substituted with a character with higher ASII which is '~'
+void replaceByreference(string word) {
+	for (char& c : word) {
+		if (c == '-') {
+			c = '~'; // Replace hyphen with tilde
+		}
+	} 
+}
+
+//function to ask the user if they want to look for another word
+void queryUser(char& response) {
+	do {
+		cout << "Do you want to look up another word?? (Y/N)" << endl;
+		cin >> response;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clear buffer to avoid issues with it
+		response = toupper(response); //convert to uppercase in case user forget sensitive case
+	} while (response != 'N' && response != 'Y');
 }
 
 //function to print the information of the word if found
 void print(Word idiom)
 {
+	cout << "-------------------------------------------------" << endl;//separator
 	cout << "Word:" << idiom.name << endl;
 	cout << "Type:" << idiom.type << endl;
 	cout << "Definition:" << idiom.definition << endl;
+	cout << "-------------------------------------------------" << endl;//separator
 }
 
 int main() {
@@ -63,7 +88,6 @@ int main() {
 	//auxiliary variables 
 	string type,definition,name; 
 
-	int linesRead = 0;
 
 	string filename=askFileName();
 	//string filename = "dictionary_2024S1.txt"; //file of the assignment with dictionary DEPRECATED
@@ -80,59 +104,66 @@ int main() {
 	ifstream file(filename); //open main file if file not found
 	//regardless of what file the user tries to open a file will always be opened 
 
-	linesRead = 0;
-	while(linesRead<8)
-	//while (!file.eof())
+	while (!file.eof())
 	{
 		word.type = getInfo(file, type);  //read type of current word
 		word.definition = getInfo(file, definition);//read definition of current word
 		word.name = getInfo(file, name);//read word
 
+		replaceByreference(word.name)//call function to check that the word does not conatin - 
+
+		
+
 		Dictionary.push_back(word); //insert new idiom into dictionary 
 
-		linesRead++;
 	}
 	file.close();
 	cout << "-------------------------------------------------" << endl;//separator
-	//algorithm to ask for a word to user
+
+	//declaration of variable useful for binary search
+	char response = ' ';
+	int left, right, middle;
 	string idiom;
-	enterWord(idiom);//passed by reference
-	
-	//algorithm to find word
-	//implmenting binary search as the dictionary is sorted alphabetically
+	do
+	{
+		//algorithm to ask for a word to user
+		idiom=" ";
+		enterWord(idiom);//passed by reference
 
-	int left = 0;//initialise start of vector
-	int right = Dictionary.size();  //initialise right value to the size of the dictionary
-	int middle; //middle avlue to facilitate binary search
+		//algorithm to find word
+		//implmenting binary search as the dictionary is sorted alphabetically
 
-	bool found=false; //bool variable to identify if word was found or not
+		left = 0;//initialise start of vector
+		right = Dictionary.size();  //initialise right value to the size of the dictionary
+		middle = 0; //middle avlue to facilitate binary search
 
-	while (left < right) {
-		middle = (left - right) / 2; //find middle element
-		if (Dictionary[middle].name == idiom)
-		{
-			cout << "The word "<< idiom <<"was found"<< endl;
-			print(Dictionary[middle]); //call function to print values on screen
-			found = true;
-		}
-		else
-		{
-			if (idiom < Dictionary[middle].name)
+		bool found = false; //bool variable to identify if word was found or not
+
+		while (left <= right) {
+			middle = left + floor((right - left) / 2); //find middle element
+			string word=Dictionary[middle].name;  //auxiliary string variable to conatin the word
+			if (word.at(0) == '-') word.erase(0,1); //erase first character if it is - 
+			if (word == idiom)
 			{
-				right = middle - 1;  //if word is a bigger word than the middle value
+				cout << "The word " << idiom << " was found" << endl;
+				print(Dictionary[middle]); //call function to print values on screen
+				found = true;
+				break;
 			}
 			else
 			{
-				left = middle + 1; //if word is smaller than the one at middle value
+				if (idiom < word)right = middle - 1;  //if word is a bigger word than the middle value
+				else left = middle + 1; //if word is smaller than the one at middle value
 			}
 		}
-	}
-	if (!found) {//scenario - word not found
-		cout << "Unfortunately the word you entered could not be found in the dictionary " << endl;
-	}
+		if (!found) {//scenario - word not found
+			cout << "Unfortunately the word you entered could not be found in the dictionary " << endl;
+		}
 
+		queryUser(response);//reponse passed by reference
+	} while (response != 'N');
 
-
+	cout << "Program is exiting..." << endl;
 
 	return 0;
 
