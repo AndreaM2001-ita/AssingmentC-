@@ -1,5 +1,5 @@
 /*
-* Assignment 1 of OOP _ 
+* Assignment 1 of OOP CSP2104 
 * program takes converts the txt file containing a dictionary into a vecotr dictionary
 * each word is inserted in the dictionary in order for the vector to be searched
 * furthermore, the user is promped to enter a word to search and abianry search is performed on the vector
@@ -37,7 +37,7 @@ string getInfo(ifstream& file, string parameter) {
 string askFileName()
 {
 	string filename;
-	cout << "insert the name of your file, with its .txt extention " << endl;
+	cout << "Insert the name of your file, with its .txt extention " << endl;
 	cin.clear();
 	getline(cin,filename,'\n');
 	return filename;
@@ -51,12 +51,19 @@ void enterWord(string& idiom) {
 }
 //function to replace - with ~ as looking up woirds would return erranous results as ASCII of '-' is llower than the other characters
 //therefore is was substituted with a character with higher ASII which is '~'
-void replaceByreference(string word) {
-	for (char& c : word) {
+void replaceByreference(string& word) {
+	string result;
+	// Iterate through each character in the input string
+	for (char c : word) {
+		// If the character is '-', replace it with '~', otherwise keep it as it is
 		if (c == '-') {
-			c = '~'; // Replace hyphen with tilde
+			result += '~';
 		}
-	} 
+		else {
+			result += c;
+		}
+	}
+	word = result;
 }
 
 //function to ask the user if they want to look for another word
@@ -110,9 +117,9 @@ int main() {
 		word.definition = getInfo(file, definition);//read definition of current word
 		word.name = getInfo(file, name);//read word
 
-		replaceByreference(word.name)//call function to check that the word does not conatin - 
-
-		
+		if (word.name.find('-') != string::npos) { //verify that '-'is in word so the program does not have to call the fucntion for each word 
+			replaceByreference(word.name);//call function to check that the word does not contain - 
+		}
 
 		Dictionary.push_back(word); //insert new idiom into dictionary 
 
