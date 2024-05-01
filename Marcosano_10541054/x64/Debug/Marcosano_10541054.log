@@ -1,4 +1,2 @@
 ﻿  Assignment.cpp
-C:\Users\marco\Desktop\Marcosano_10541054\Marcosano_10541054\Assignment.cpp(144,26): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\marco\Desktop\Marcosano_10541054\Marcosano_10541054\Assignment.cpp(150,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Marcosano_10541054.vcxproj -> C:\Users\marco\Desktop\Marcosano_10541054\x64\Debug\Marcosano_10541054.exe
